@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo - Vanilla JS</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Side bar -->
+
+      <div class="sidebar">
+        <div class="logo">📝 <span>todo.</span></div>
+
+        <!-- Search -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="text" id="searchInput" placeholder="Search task..." />
+        </div>
+
+        <!-- Add Task -->
+        <form id="taskForm" class="search-box">
+          <i class="fa-solid fa-plus"></i>
+
+          <input type="text" id="taskInput" placeholder="Add a task..." />
+
+          <button type="submit" class="fa-solid fa-check"></button>
+        </form>
+
+        <div class="line"></div>
+
+        <!-- Yesterday’s Tasks -->
+        <h3>Yesterday</h3>
+        <div id="yesterdayTasks" class="task-list"></div>
+        <p id="yesterdayMessage" class="empty-text"></p>
+      </div>
+
+      <!-- Right Hand Section -->
+      <div class="right-hand-data">
+        <div>
+          <div class="title">Today</div>
+
+          <!-- Today’s Tasks -->
+          <div id="todayTasks" class="task-list"></div>
+          <p id="todayMessage" class="empty-text"></p>
+
+          <h2>Tasks Summary</h2>
+          <div class="cards-container">
+            <div class="card">
+              <div class="card-title">Total Tasks</div>
+              <div class="card-info" id="totalTasks">0</div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Completed</div>
+              <div class="card-info" id="completedTasks">0</div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Pending</div>
+              <div class="card-info" id="pendingTasks">0</div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <p>&copy; 2025 - Made by Ajay Teotia</p>
+        </footer>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

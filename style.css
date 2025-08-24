@@ -1,0 +1,172 @@
+* {
+  font-family: "Ysabeau Infant", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f2dfd7;
+  color: #736ced;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  border-radius: 16px;
+}
+
+.sidebar {
+  background: #fef9ff;
+  width: 400px;
+  border-radius: 16px 0 0 16px;
+  padding: 30px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  padding: 0 40px;
+  outline: none;
+  font-size: 18px;
+  color: #736ced;
+}
+
+.search-box input::placeholder {
+  color: #736ced;
+}
+
+.search-box button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #736ced;
+}
+
+.search-box i {
+  position: absolute;
+  left: 12px;
+  color: #736ced;
+  font-size: 18px;
+}
+
+.line {
+  border-top: 1px solid #ccc;
+  margin: 15px 0;
+  opacity: 0.6;
+}
+
+.task-list {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  max-height: 320px;
+  scroll-behavior: smooth;
+}
+
+.right-hand-data {
+  flex: 1;
+  background: #d4c1ec;
+  border-radius: 0 16px 16px 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.right-hand-data h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: #736ced;
+  border-radius: 8px;
+  color: #fff;
+  padding: 16px;
+  width: 180px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-info {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.task-card {
+  background: #736ced;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card.completed {
+  text-decoration: line-through;
+  background: #00a843;
+}
+
+.delete-btn {
+  background: #fff;
+  color: #736ced;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
