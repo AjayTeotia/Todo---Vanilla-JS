@@ -1,3 +1,44 @@
+// * Random Task Generator
+const randomTasks = [
+  "Read 10 pages of a book",
+  "Do 15 push-ups",
+  "Clean your desk",
+  "Drink 2L of water",
+  "Write a journal entry",
+  "Take a 15 min walk",
+  "Plan tomorrow’s tasks",
+  "Organize files",
+  "Call a friend",
+  "Meditate for 5 minutes",
+  "Review your budget",
+  "Stretch for 10 minutes",
+  "Learn a new word",
+  "Write down 3 goals",
+  "Water your plants",
+  "Listen to a podcast",
+  "Practice deep breathing",
+  "Update your to-do list",
+  "Unplug from screens for 30 min",
+];
+
+document.getElementById("randomTaskBtn").addEventListener("click", () => {
+  const randomTask =
+    randomTasks[Math.floor(Math.random() * randomTasks.length)];
+
+  if (tasks.find((t) => t.text === randomTask && t.date === today))
+    return alert("Task already exists");
+
+  tasks.push({
+    id: Date.now(),
+    text: randomTask,
+    date: today,
+    completed: false,
+  });
+
+  saveTasks();
+  renderTasks();
+});
+
 // * Formate date
 function formateDate(date) {
   return date.toLocaleDateString();
@@ -71,17 +112,13 @@ function renderTasks() {
   const yesterdayList = document.getElementById("yesterdayTasks");
   const todayMessage = document.getElementById("todayMessage");
   const yesterdayMessage = document.getElementById("yesterdayMessage");
-  const search = document.getElementById("searchInput").value.toLowerCase();
+  // const search = document.getElementById("searchInput").value.toLowerCase();
 
   todayList.innerHTML = "";
   yesterdayList.innerHTML = "";
 
-  const todayTasks = tasks.filter(
-    (t) => t.date === today && t.text.toLowerCase().includes(search)
-  );
-  const yesterdayTasks = tasks.filter(
-    (t) => t.date === yesterday && t.text.toLowerCase().includes(search)
-  );
+  const todayTasks = tasks.filter((t) => t.date === today);
+  const yesterdayTasks = tasks.filter((t) => t.date === yesterday);
 
   todayTasks.forEach((task) => todayList.appendChild(createTaskCard(task)));
   yesterdayTasks.forEach((task) =>
@@ -89,18 +126,10 @@ function renderTasks() {
   );
 
   todayMessage.textContent =
-    tasks.filter((t) => t.date === today).length === 0
-      ? "No tasks for today. Add some!"
-      : todayTasks.length === 0
-      ? "No matching tasks."
-      : "";
+    todayTasks.length === 0 ? "No tasks for today. Add some!" : "";
 
   yesterdayMessage.textContent =
-    tasks.filter((t) => t.date === yesterday).length === 0
-      ? "No tasks yesterday."
-      : yesterdayTasks.length === 0
-      ? "No matching tasks."
-      : "";
+    yesterdayTasks.length === 0 ? "No tasks yesterday." : "";
 
   document.getElementById("totalTasks").textContent = tasks.length;
   document.getElementById("completedTasks").textContent = tasks.filter(
@@ -136,6 +165,6 @@ function createTaskCard(task) {
   return card;
 }
 
-document.getElementById("searchInput").addEventListener("input", renderTasks);
+// document.getElementById("searchInput").addEventListener("input", renderTasks);
 
 renderTasks();

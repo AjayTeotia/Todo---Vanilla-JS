@@ -170,3 +170,20 @@ body {
   padding: 5px 10px;
   cursor: pointer;
 }
+
+.random-btn {
+  width: 100%;
+  background: #736ced;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: background 0.3s ease;
+}
+
+.random-btn:hover {
+  background: #5b53c2;
+}
